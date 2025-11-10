@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Pour toi, mon amour</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="background">
+			<div class="card" role="main">
+				<div class="card-top">
+					<div class="photo" aria-hidden="true">
+						<!-- placeholder SVG portrait -->
+						<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+							<defs>
+								<linearGradient id="g" x1="0" x2="1">
+									<stop offset="0" stop-color="#ffd1dc" />
+									<stop offset="1" stop-color="#ff8aa1" />
+								</linearGradient>
+							</defs>
+							<circle cx="60" cy="60" r="58" fill="url(#g)" />
+							<g transform="translate(20,22)" fill="#fff">
+								<ellipse cx="40" cy="58" rx="28" ry="10" opacity="0.18"/>
+								<circle cx="40" cy="34" r="18" />
+							</g>
+						</svg>
+					</div>
+					<div class="titles">
+						<h1 class="gradient">Pour toi, mon amour <b>Khdy Faye</b></h1>
+						<h2>Chaque jour avec toi est un cadeau</h2>
+					</div>
+				</div>
+
+				<div class="poem" id="poem">
+					<p>Mon amour,</p>
+					<p>Dans tes yeux je trouve ma maison,</p>
+					<p>Dans ton rire, ma chanson.</p>
+					<p>Chaque instant près de toi est précieux — merci d'être toi.</p>
+					<p class="signature">— Avec tout mon coeur</p>
+				</div>
+
+				<div class="actions">
+					<button id="printBtn">Imprimer / Enregistrer en PDF</button>
+					<button id="downloadBtn">Télécharger le texte</button>
+				</div>
+
+				<p class="small">Utilisez les boutons pour imprimer ou télécharger le message.</p>
+
+				<!-- décor animé : coeurs flottants -->
+				<div class="hearts" aria-hidden="true">
+					<span class="h h1">❤</span>
+					<span class="h h2">❤</span>
+					<span class="h h3">❤</span>
+					<span class="h h4">❤</span>
+					<span class="h h5">❤</span>
+				</div>
+			</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

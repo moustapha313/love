@@ -1,0 +1,71 @@
+:root{
+  --bg1:#ffd6e0; /* rose clair */
+  --bg2:#fff0f6; /* très clair */
+  --accent:#e11d48; /* rouge-rose */
+  --card-bg:rgba(255,255,255,0.95);
+  --shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+body{background:linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 100%);display:flex;align-items:center;justify-content:center;padding:32px}
+.background{width:100%;max-width:900px}
+.card{background:var(--card-bg);padding:36px;border-radius:20px;box-shadow:var(--shadow);text-align:center;position:relative;overflow:hidden}
+h1{font-family:'Playfair Display',serif;margin:0;font-size:2.4rem;color:var(--accent)}
+h2{margin:8px 0 20px 0;font-weight:600;color:#6b2b3a}
+.poem{font-size:1.1rem;line-height:1.6;color:#4a2a35;margin:18px 0}
+.signature{margin-top:12px;font-weight:600;color:var(--accent)}
+.actions{display:flex;gap:12px;justify-content:center;margin-top:18px}
+button{background:var(--accent);color:white;border:none;padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(225,29,72,0.18);transition:transform .14s ease}
+button:active{transform:translateY(1px)}
+.small{margin-top:12px;color:#7a4654;font-size:.9rem}
+
+/* décor : cœurs subtils */
+.card::before, .card::after{content:'';position:absolute;opacity:0.08;border-radius:50%;pointer-events:none}
+.card::before{width:320px;height:320px;right:-80px;top:-60px;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 40%)}
+.card::after{width:220px;height:220px;left:-60px;bottom:-60px;background:radial-gradient(circle at 70% 70%, #ff9fb1, transparent 40%)}
+
+/* layout top */
+.card-top{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:12px}
+.photo{width:120px;height:120px;border-radius:999px;overflow:hidden;flex:0 0 120px;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.titles{text-align:left}
+.titles h1{font-size:2rem;margin:0}
+.titles h2{font-size:1rem;margin:4px 0 0 0}
+
+/* gradient text */
+.gradient{background:linear-gradient(90deg,#e11d48,#ff6b9f);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* fade-in card */
+.card{opacity:0;transform:translateY(6px) scale(0.998);animation:cardIn .6s ease forwards}
+@keyframes cardIn{to{opacity:1;transform:none}}
+
+/* hearts animation */
+.hearts{position:absolute;inset:0;pointer-events:none}
+.hearts .h{position:absolute;font-size:22px;opacity:0.6;color:#ff4d79;filter:drop-shadow(0 6px 10px rgba(255,77,121,0.12));transform-origin:center}
+.hearts .h1{left:10%;bottom:10%;animation:floatUp 8s linear infinite;font-size:28px}
+.hearts .h2{left:30%;bottom:0;animation:floatUp 9s linear .6s infinite;font-size:20px}
+.hearts .h3{left:50%;bottom:5%;animation:floatUp 7s linear .3s infinite;font-size:24px}
+.hearts .h4{left:70%;bottom:8%;animation:floatUp 10s linear 1s infinite;font-size:18px}
+.hearts .h5{left:85%;bottom:2%;animation:floatUp 12s linear .9s infinite;font-size:22px}
+
+@keyframes floatUp{
+  0%{transform:translateY(0) scale(1) rotate(0);opacity:0}
+  10%{opacity:0.9}
+  50%{transform:translateY(-40vh) scale(1.08) rotate(10deg);opacity:0.75}
+  100%{transform:translateY(-90vh) scale(.9) rotate(-10deg);opacity:0}
+}
+
+/* improved buttons */
+button{background:var(--accent);color:white;border:none;padding:10px 16px;border-radius:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(225,29,72,0.16);transition:transform .18s ease,box-shadow .18s ease}
+button:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(225,29,72,0.12)}
+button.secondary{background:transparent;color:var(--accent);border:2px solid rgba(225,29,72,0.12)}
+
+/* small text and responsiveness */
+.small{margin-top:14px;color:#7a4654;font-size:.9rem}
+@media(max-width:520px){.card-top{flex-direction:column;align-items:center}.titles{text-align:center}.titles h1{font-size:1.6rem}}
+
+/* print styles */
+@media print{
+  body{background:white}
+  .card{box-shadow:none;border-radius:0}
+  .small,.actions{display:none}
+}
